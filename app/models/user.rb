@@ -49,6 +49,7 @@ class User < ActiveRecord::Base
    t = self.lesson_completions.where("lesson_id = %s ", lesson.id ).limit(1)
     t.first["created_at"]
   end
+  
   def latest_lesson_completion
     self.lesson_completions.order(:created_at => :desc).first
   end
