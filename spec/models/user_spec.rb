@@ -139,7 +139,7 @@ describe User do
         end
 
         it "should return the latest completed lesson" do
-          expect(completed_lesson.id).to eq user.latest_lesson_completion.id
+          expect(completed_lesson.id).to eq user.latest_lesson_completion.lesson_id
         end
       end
 

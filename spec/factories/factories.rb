@@ -2,7 +2,7 @@ FactoryGirl.define do
 
   factory :user, :aliases => [:creator] do
     before(:create) do |user|
-      user.stub(:send_welcome_email)
+      allow(user).to receive(:send_welcome_email).and_return(user)
     end
     sequence :username do |n|
       "foobar#{n}"

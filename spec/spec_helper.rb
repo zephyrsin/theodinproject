@@ -43,6 +43,10 @@ RSpec.configure do |config|
     DatabaseCleaner.start
   end
 
+  FactoryGirl::SyntaxRunner.class_eval do
+    include RSpec::Mocks::ExampleMethods
+  end
+
   config.after do
     DatabaseCleaner.clean
   end

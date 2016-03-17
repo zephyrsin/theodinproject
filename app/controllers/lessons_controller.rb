@@ -33,10 +33,10 @@ class LessonsController < ApplicationController
 
     #SPIKE! These two queries run the logic we want - but are by no means final.
     #TODO: Write tests, rewrite this crap :)
-    @completion_ids = @lesson.lesson_completion_ids
-    @current_students = @prev_lesson.lesson_completion_ids.find_all do |completion_id|
-      User.find(completion_id).send(:latest_completed_lesson).id == @prev_lesson.id
-    end
+    # @completion_ids = @lesson.lesson_completion_ids
+    # @current_students = @prev_lesson.lesson_completion_ids.find_all do |completion_id|
+    #   User.find(completion_id).send(:latest_completed_lesson).id == @prev_lesson.id
+    # end
 
     # the position of the lesson not including projects
     @lesson_position_in_section = @lesson.section.lessons.where("is_project = ? AND position <= ?", false, @lesson.position).count
