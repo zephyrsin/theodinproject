@@ -25,4 +25,11 @@ class Lesson < ActiveRecord::Base
     end
   end
 
+  def completed_students_count
+    self.lesson_completions.count
+  end
+
+  def current_students_count
+    #to do
+  end
 end

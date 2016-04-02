@@ -31,6 +31,7 @@ FactoryGirl.define do
   end
 
   factory :lesson do
+    id { 1 }
     sequence :title do |n|
       "test lesson#{n}"
     end

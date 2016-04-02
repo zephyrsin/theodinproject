@@ -38,4 +38,14 @@ describe Lesson do
     expect(subject.completing_users).to be_empty
   end
 
+  describe '#completed_students_count' do
+    before do
+      allow(lesson).to receive(:lesson_completions).and_return(["lesson", "lesson"])
+    end
+
+    it 'test' do
+      expect(lesson.completed_students_count).to eql(2)
+    end
+  end
+
 end
